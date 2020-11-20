@@ -1,3 +1,1 @@
-document.querySelector('h1').onclick = function (){
-  alert(123);
-};
+$('#header').load('./header.html');
