@@ -1,4 +1,8 @@
-$color: rgb(204, 151, 86);
+$color: #cc9756;
+@mixin elf($x, $y) {
+  background-repeat: no-repeat;
+  background-position: $x $y;
+}
 .black_top {
   background: rgb(51, 51, 51);
 }
@@ -57,6 +61,7 @@ $color: rgb(204, 151, 86);
         .cg_show {
           display: none;
           position: absolute;
+          z-index: 5;
           top: 24px;
           left: 0;
           padding: 0 10px;
@@ -94,6 +99,7 @@ $color: rgb(204, 151, 86);
         .fw_show {
           display: none;
           position: absolute;
+          z-index: 6;
           top: 24px;
           left: 0;
           padding: 0 10px;
@@ -132,16 +138,16 @@ $color: rgb(204, 151, 86);
           margin-right: 6px;
           width: 8px;
           height: 12px;
-          background-image: url(../img/icon-yxtop.webp);
-          background-repeat: no-repeat;
-          background-position-x: 0;
-          background-position-y: 0;
+          background-image: url(../img/icon.png);
+          @include elf(0, 0);
         }
         .ewm_show {
           display: none;
           position: absolute;
+          z-index: 7;
           left: -46px;
           top: 24px;
+          border: 1px solid #ccc;
           &::after {
             content: ' ';
             display: block;
@@ -173,6 +179,123 @@ $color: rgb(204, 151, 86);
           display: block;
         }
       }
+    }
+  }
+}
+.head_logo {
+  padding-top: 26px;
+  .logo {
+    margin: 0;
+    float: left;
+    a {
+      display: block;
+      width: 212px;
+      height: 60px;
+      @include elf(1px, -303px);
+      background-image: url(../img/icon.png);
+      text-indent: -99999px;
+    }
+  }
+  .search {
+    float: right;
+    .search_top {
+      width: 532px;
+      position: relative;
+      .search_inp {
+        display: block;
+        float: left;
+        box-sizing: border-box;
+        width: 442px;
+        height: 38px;
+        line-height: 38px;
+        border: 1px solid $color;
+        border-bottom-left-radius: 19px;
+        border-top-left-radius: 19px;
+        font-size: 14px;
+        padding-left: 38px;
+        outline: 0;
+      }
+      .search_sou {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        left: 18px;
+        top: 12px;
+        background-image: url(../img/icon.png);
+        @include elf(0, -518px);
+      }
+      .search_ss {
+        display: block;
+        width: 90px;
+        height: 38px;
+        border: 0;
+        background-color: $color;
+        border-top-right-radius: 19px;
+        border-bottom-right-radius: 19px;
+        cursor: pointer;
+        float: left;
+        color: #fff;
+        line-height: 38px;
+        text-align: center;
+        font-size: 16px;
+        letter-spacing: 1px;
+        outline: none;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+    .search_p {
+      font-size: 12px;
+      padding-left: 18px;
+      margin-top: 8px;
+      a {
+        color: $color;
+        text-decoration: none;
+      }
+      .sea_i {
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        background-color: #ccc;
+        vertical-align: middle;
+        margin: 0 10px;
+      }
+    }
+  }
+  .shoppCar {
+    display: block;
+    margin-left: 49px;
+    float: right;
+    position: relative;
+    cursor: pointer;
+    width: 134px;
+    height: 38px;
+    color: $color;
+    border: 1px solid $color;
+    border-radius: 19px;
+    padding: 8px 0;
+    .shopp_i {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 22px;
+      margin-right: 2px;
+      background-image: url(../img/icon.png);
+      @include elf(-1px, -81px);
+    }
+    .shoppNum {
+      display: inline-block;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background-image: url(../img/icon.png);
+      @include elf(0, -51px);
+      color: whitesmoke;
+      margin-left: 8px;
+      vertical-align: middle;
+      font-size: 12px;
+      line-height: 19px;
     }
   }
 }
