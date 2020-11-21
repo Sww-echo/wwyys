@@ -1,0 +1,178 @@
+$color: rgb(204, 151, 86);
+.black_top {
+  background: rgb(51, 51, 51);
+}
+.container {
+  width: 1090px;
+  margin: 0 auto;
+  background-color: lavender;
+}
+.head_top {
+  height: 36px;
+  background: rgb(51, 51, 51);
+  font-size: 12px;
+  .top_left {
+    float: left;
+    line-height: 34px;
+    img {
+      vertical-align: middle;
+    }
+    a {
+      color: $color;
+      margin-left: 10px;
+      &:hover {
+        color: whitesmoke;
+        text-decoration: none;
+      }
+    }
+  }
+  .top_right {
+    float: right;
+    .top_ul {
+      list-style: none;
+      li {
+        float: left;
+        padding: 0 10px;
+        a {
+          color: #ccc;
+          text-decoration: none;
+          &:hover {
+            color: whitesmoke;
+          }
+        }
+        .ii {
+          display: inline-block;
+          width: 0.5px;
+          height: 16px;
+          background-color: #5c5c5c;
+          vertical-align: middle;
+          margin-left: 10px;
+        }
+      }
+      .qycg {
+        position: relative;
+        &:hover .cg_show {
+          display: block;
+        }
+        .cg_show {
+          display: none;
+          position: absolute;
+          top: 24px;
+          left: 0;
+          padding: 0 10px;
+          background-color: white;
+          border: 1px solid #ccc;
+          &::after {
+            content: ' ';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 23px;
+            top: -20px;
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+          }
+          a {
+            display: block;
+            text-align: center;
+            line-height: 36px;
+            border-bottom: 1px solid #eee;
+            &:hover {
+              color: $color;
+            }
+          }
+        }
+      }
+      .kffw {
+        position: relative;
+        &:hover .fw_show {
+          display: block;
+        }
+        .fw_show {
+          display: none;
+          position: absolute;
+          top: 24px;
+          left: 0;
+          padding: 0 10px;
+          background-color: white;
+          border: 1px solid #ccc;
+          &::after {
+            content: ' ';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 23px;
+            top: -20px;
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+          }
+          a {
+            display: block;
+            text-align: center;
+            line-height: 36px;
+            border-bottom: 1px solid #eee;
+            &:hover {
+              color: $color;
+            }
+          }
+        }
+      }
+      .app_ewm {
+        position: relative;
+        .app_phone {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: -10px;
+          margin-right: 6px;
+          width: 8px;
+          height: 12px;
+          background-image: url(../img/icon-yxtop.webp);
+          background-repeat: no-repeat;
+          background-position-x: 0;
+          background-position-y: 0;
+        }
+        .ewm_show {
+          display: none;
+          position: absolute;
+          left: -46px;
+          top: 24px;
+          &::after {
+            content: ' ';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 56px;
+            top: -20px;
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+          }
+          a {
+            display: block;
+            padding: 10px;
+            color: $color;
+            text-align: center;
+            line-height: 30px;
+            background-color: white;
+            img {
+              display: block;
+              width: 117px;
+              height: 117px;
+            }
+          }
+        }
+        &:hover .ewm_show {
+          display: block;
+        }
+      }
+    }
+  }
+}
