@@ -9,7 +9,7 @@ $color: #cc9756;
 .container {
   width: 1090px;
   margin: 0 auto;
-  background-color: lavender;
+  // background-color: lavender;
 }
 .head_top {
   height: 36px;
@@ -39,7 +39,7 @@ $color: #cc9756;
         padding: 0 10px;
         a {
           color: #ccc;
-          text-decoration: none;
+          line-height: 36px;
           &:hover {
             color: whitesmoke;
           }
@@ -48,7 +48,7 @@ $color: #cc9756;
           display: inline-block;
           width: 0.5px;
           height: 16px;
-          background-color: #5c5c5c;
+          background-color: #fff;
           vertical-align: middle;
           margin-left: 10px;
         }
@@ -62,7 +62,7 @@ $color: #cc9756;
           display: none;
           position: absolute;
           z-index: 5;
-          top: 24px;
+          top: 36px;
           left: 0;
           padding: 0 10px;
           background-color: white;
@@ -100,7 +100,7 @@ $color: #cc9756;
           display: none;
           position: absolute;
           z-index: 6;
-          top: 24px;
+          top: 36px;
           left: 0;
           padding: 0 10px;
           background-color: white;
@@ -146,7 +146,7 @@ $color: #cc9756;
           position: absolute;
           z-index: 7;
           left: -46px;
-          top: 24px;
+          top: 36px;
           border: 1px solid #ccc;
           &::after {
             content: ' ';
@@ -184,6 +184,7 @@ $color: #cc9756;
 }
 .head_logo {
   padding-top: 26px;
+  position: relative;
   .logo {
     margin: 0;
     float: left;
@@ -275,6 +276,7 @@ $color: #cc9756;
     border: 1px solid $color;
     border-radius: 19px;
     padding: 8px 0;
+    line-height: 20px;
     .shopp_i {
       display: inline-block;
       vertical-align: middle;
@@ -296,6 +298,68 @@ $color: #cc9756;
       vertical-align: middle;
       font-size: 12px;
       line-height: 19px;
+    }
+  }
+  .ullist {
+    list-style: none;
+    justify-content: space-between;
+    display: flex;
+    padding: 0;
+    margin-top: 20px;
+    li {
+      display: block;
+      a {
+        color: #000;
+        display: block;
+        font-weight: bold;
+        line-height: 34px;
+        &:hover {
+          color: $color;
+          border-bottom: 4px solid $color;
+        }
+      }
+      .shou {
+        color: $color;
+        border-bottom: 4px solid $color;
+      }
+    }
+  }
+  .showlist {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        width: 124px;
+        margin-right: 24px;
+        h3 {
+          max-width: 124px;
+          line-height: 36px;
+          margin: 0;
+          width: 124px;
+          font-weight: bold;
+          border-bottom: 1px solid #ddd;
+        }
+        .listimg {
+          overflow: hidden;
+          img {
+            width: 50px;
+            height: 50px;
+            // float: left;
+            margin-right: 4px;
+            vertical-align: middle;
+          }
+          span {
+            display: inline-block;
+            height: 48px;
+            max-width: 70px;
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
 }
