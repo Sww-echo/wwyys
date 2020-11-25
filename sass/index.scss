@@ -117,6 +117,47 @@ $color: #cc9756;
         }
       }
     }
+    .arrival_left {
+      width: 110px;
+      box-sizing: border-box;
+      background: #fff;
+      position: absolute;
+      left: -180px;
+      top: 50px;
+      border: 1px solid #ccc;
+      padding: 0 16px 10px;
+      p {
+        font-size: 16px;
+        color: #bb3343;
+        text-align: center;
+        line-height: 38px;
+        height: 38px;
+        display: block;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        font-weight: 700;
+        cursor: default;
+      }
+      li {
+        cursor: pointer;
+        margin-top: 10px;
+        img {
+          width: 30px;
+          height: 30px;
+          display: block;
+          margin-right: 8px;
+          float: left;
+        }
+        span {
+          display: block;
+          font-size: 12px;
+          // margin-top: 10px;
+        }
+        &:hover {
+          color: #bb3343;
+        }
+      }
+    }
   }
   // 人气推荐
   .rec_box {

@@ -231,11 +231,25 @@ $(function () {
         backgroundColor: '#fff',
         zIndex: 20
       });
-
-      // console.log($(window).scrollTop());
+      console.log($(window).scrollTop());
     } else {
       $('.header').css({
         position: 'static'
+      });
+    }
+    if ($(window).scrollTop() > 400) {
+      $('.arrival .arrival_left').css({
+        position: 'fixed',
+        top: 160,
+        left: 40,
+        zIndex: 21
+      });
+    } else {
+      $('.arrival .arrival_left').css({
+        position: 'absolute',
+        left: -180,
+        top: 50,
+        zIndex: 21
       });
     }
   });
