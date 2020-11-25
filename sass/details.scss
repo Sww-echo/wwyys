@@ -1,5 +1,5 @@
 body {
-  background: skyblue;
+  // background: skyblue;
 }
 $color: #cc9756;
 .details_main {
@@ -22,14 +22,20 @@ $color: #cc9756;
         height: 428px;
         float: left;
         position: relative;
+        border: 1px solid $color;
         img {
           width: 100%;
           height: 100%;
         }
         .mask {
           position: absolute;
+          top: 0;
+          left: 0;
           width: 230px;
+          background-color: orange;
+          opacity: 0.4;
           height: 230px;
+          display: none;
         }
       }
       .content {
@@ -48,9 +54,15 @@ $color: #cc9756;
         position: absolute;
         left: 450px;
         top: 0;
+        overflow: hidden;
+        border: 1px solid $color;
+        display: none;
+        z-index: 23;
         img {
-          width: 100%;
-          height: 100%;
+          position: absolute;
+          left: 100px;
+          width: 786.5px;
+          height: 786.5px;
         }
       }
       .nav {
