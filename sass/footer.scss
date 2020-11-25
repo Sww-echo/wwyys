@@ -1,0 +1,13 @@
+.footerbox {
+  height: 268px;
+  padding-top: 37px;
+  background-color: #414141;
+  box-sizing: border-box;
+  .footer_content {
+    height: 100%;
+    background-image: url(../img/footer.png);
+    background-repeat: no-repeat;
+    background-position: -10px 0;
+    background-size: 100% 100%;
+  }
+}
