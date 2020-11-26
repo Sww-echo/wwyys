@@ -3,6 +3,38 @@ $.getScript('./js/header.js');
 $('.footer').load('./footer.html');
 var code = location.href.split('?')[1].split('=')[1];
 // console.log(code);
+// 设置cookie
+function setCookie(options) {
+  options.days = options.days || 0;
+  options.path = options.path || '';
+  if (options.days === 0) {
+    document.cookie =
+      options.key + '=' + options.val + '; path=' + options.path;
+  } else {
+    var d = new Date();
+    d.setDate(d.getDate() + options.days);
+    document.cookie =
+      options.key +
+      '=' +
+      options.val +
+      '; expires=' +
+      d +
+      '; path=' +
+      options.path;
+  }
+}
+// 获取cookie
+function getCookie(key) {
+  var arr = document.cookie.split('; ');
+  for (var i = 0, len = arr.length; i < len; i++) {
+    var arr2 = arr[i].split('=');
+    if (arr2[0] === key) {
+      return arr2[1];
+    }
+  }
+  return null;
+}
+// 头部吸顶
 $(document).scroll(function () {
   if ($(window).scrollTop() > 180) {
     // console.log(111);
@@ -30,8 +62,11 @@ $(function () {
     async: false,
     success: function (data) {
       var str = '';
+      var flag = true;
+
+      var boximg = null;
       $.each(data.data, function (index, item) {
-        // console.log(item);
+        console.log(item.id);
         if (code === item.id) {
           str = `<div class="minBox">
                 <img src="${item.url}" alt="" />
@@ -48,9 +83,16 @@ $(function () {
             console.log(ite);
             str += `<section class=""><img src="${ite.url}" alt="" /></section>`;
           });
+          flag = false;
+          boximg = item.boximg;
         }
       });
-      str += '</div>';
+      if (flag) {
+        $('.shoppCar').css({ display: 'none' });
+        str = '<h2>此商品没有数据 !-_-</h2>';
+      } else {
+        str += `</div><div class="boxImg container"><img src="${boximg}"></div>`;
+      }
       // console.log(str);
       $('.main').html(str);
       // console.log();
@@ -107,6 +149,41 @@ $(function () {
           display: 'none'
         });
         $('.main .maxBox').css({ display: 'none' });
+      });
+      // 页面加载获取cookie
+      $('.carnum .inp').val(getCookie(code));
+      if (!getCookie(code)) {
+        $('.carnum .inp').val('1');
+      }
+      // 点击数量减少
+      $('.carnum .car_prev').on('click', function () {
+        var carnum = Number($('.carnum .inp').val());
+        if (carnum <= 1) {
+          carnum = 1;
+        } else {
+          carnum--;
+        }
+        $('.carnum .inp').val(carnum);
+      });
+      // 点击数量增加
+      $('.carnum .car_add').on('click', function () {
+        var carnum = Number($('.carnum .inp').val());
+        carnum++;
+        $('.carnum .inp').val(carnum);
+      });
+      // 点击加入购物车
+      $('.addcar .add_gwc').on('click', function () {
+        var carnum = Number($('.carnum .inp').val());
+        setCookie({
+          key: code,
+          val: carnum,
+          day: 10
+        });
+        console.log(carnum);
+      });
+      // 点击立即购买跳转页面并传入商品code
+      $('.shoppCar .addcar .mai').on('click', function () {
+        $(this).attr('href', `shoppCar.html?code=${code}`);
       });
     }
   });

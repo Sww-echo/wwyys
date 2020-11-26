@@ -24,23 +24,17 @@ $(function () {
           </li>`;
       });
       $('.newlist .newul').on('mouseenter', 'li', function () {
-        // console.log($($(this).children()[0]).children());
         var _$this = $(this);
         $.each(data, function (index, item) {
-          // console.log(_$this.attr('code'));
           if (Number(_$this.attr('code')) === item.id) {
-            // console.log(item.showPicUrl);
             $(_$this.children()[0]).children().attr('src', item.scenePicUrl);
           }
         });
       });
       $('.newlist .newul').on('mouseleave', 'li', function () {
-        // console.log($($(this).children()[0]).children());
         var _$this = $(this);
         $.each(data, function (index, item) {
-          // console.log(_$this.attr('code'));
           if (Number(_$this.attr('code')) === item.id) {
-            // console.log(item.showPicUrl);
             $(_$this.children()[0]).children().attr('src', item.showPicUrl);
           }
         });
@@ -131,6 +125,7 @@ $(function () {
       });
     }
   });
+  // 大家都在说--底部轮播/*  */
   $.ajax({
     type: 'get',
     url: './json/commentList.json',
