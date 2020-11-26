@@ -59,11 +59,13 @@ $.ajax({
   async: false,
   success: function (data) {
     var str = '';
+    var flag = true;
     // console.log(data);
     $.each(data.data, function (index, item) {
       // console.log(getCookie(item.id));
       if (getCookie(item.id)) {
         // console.log(item.id);
+        flag = false;
         str += `<li class="clear">
           <section class="inp_img">
             <input type="checkbox" /><img src="${item.url}" alt="" />
@@ -80,10 +82,13 @@ $.ajax({
           </li>`;
       }
     });
+    if (flag) {
+      str = `<h2>啥也没有，去逛逛吧！</h2>`;
+    }
     $('.main .shoppList').html(str);
     // console.log($('.shoppList .add_rem input'));
-    $('.shoppList .add_rem input').val('2');
-    $.each($('.shoppList .add_rem input'), function (ind, ite) {
+    // $('.shoppList .add_rem input').val('2');
+    /* $.each($('.shoppList .add_rem input'), function (ind, ite) {
       // console.log(ite);
       $(ite).val(getCookie($(this).attr('code')));
     });
@@ -95,6 +100,23 @@ $.ajax({
         console.log(getCookie($(ite).attr('code')));
         $(ite).text('￥' + getCookie($(this).attr('code')) * price);
       });
+    }); */
+    $.each($('.shoppList .add_rem input'), function (ind, ite) {
+      // console.log(ite);
+      $(ite).val(getCookie($(this).attr('code')));
+    });
+    $.each($('.shoppList li'), function (index, item) {
+      // console.log($(item).children().eq(0));
+      // 单价
+      var price = Number($(item).children().eq(2).text().substr(1));
+      // 数量
+      var num = Number($(item).children().eq(3).children().eq(1).val());
+      //  计算总价
+      $(item)
+        .children()
+        .eq(4)
+        .text('￥' + price * num);
+      console.log(price, num);
     });
   }
 });

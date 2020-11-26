@@ -5,8 +5,8 @@
 $color: #cc9756;
 
 .main {
-  height: 1000px;
-  background-color: wheat;
+  // height: 1000px;
+  // background-color: wheat;
   border-top: 1px solid transparent;
   .main_tt {
     display: block;
@@ -52,10 +52,15 @@ $color: #cc9756;
     }
   }
   .shoppList {
+    h2 {
+      font-size: 100px;
+      color: $color;
+    }
     li {
-      background: skyblue;
+      background: #fffbf0;
       padding: 20px;
       margin-bottom: 20px;
+      border: 1px solid #ddd;
       .inp_img {
         float: left;
         input {
@@ -69,6 +74,7 @@ $color: #cc9756;
           margin: 0 20px;
         }
       }
+
       h3 {
         float: left;
         height: 100px;

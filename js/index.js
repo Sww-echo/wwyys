@@ -14,7 +14,7 @@ $(function () {
       // console.log(data);
       $.each(data, function (index, item) {
         newStr += `<li  code = "${item.id}">
-          <a href="./details.html?code=${item.id}" class="li_top"
+          <a href="./details.html?code=${item.id}" target="_blank" class="li_top"
             ><img src="${item.showPicUrl}" alt=""
           /></a>
           <a href="#" class="li_buttom">
@@ -65,7 +65,7 @@ $(function () {
       $.each(data, function (index, item) {
         str += `              
             <div class="rec_tj">
-            <a href="./details.html?code=${item.id}" class="rec_smallimg">
+            <a href="./details.html?code=${item.id}" target="_blank" class="rec_smallimg">
               <img src="${item.showPicUrl}" alt="" />
             </a>
             <i class="xrtj">${item.promTag}</i>
@@ -88,7 +88,7 @@ $(function () {
       console.log(data);
       $.each(data, function (index, item) {
         str += `<li code="${item.id}">
-        <a href="./details.html?code=${item.id}" class="change_top"
+        <a href="./details.html?code=${item.id}" target="_blank" class="change_top"
           ><img src="${item.showPicUrl}" alt=""
         /></a>
         <a href="#" class="change_buttom">

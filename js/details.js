@@ -157,7 +157,7 @@ $(function () {
       }
       // 点击数量减少
       $('.carnum .car_prev').on('click', function () {
-        var carnum = Number($('.carnum .inp').val());
+        var carnum = Number($('.carnum .inp').val(1));
         if (carnum <= 1) {
           carnum = 1;
         } else {
