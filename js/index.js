@@ -5,6 +5,7 @@ $('.footer').load('./footer.html');
 $(function () {
   // 新品首发
   $.ajax({
+    // 拿到新品首发的数据，下面ajax一样拿到相应数据
     type: 'get',
     url: './json/newitem.json',
     dataType: 'json',
@@ -13,6 +14,8 @@ $(function () {
       var newStr = '';
       // console.log(data);
       $.each(data, function (index, item) {
+        // 下面a标签里跳转到放大镜那个页面的时候传入了商品id
+        // 点击a标签跳转页面，后面拼接了商品id，下面一样
         newStr += `<li  code = "${item.id}">
           <a href="./details.html?code=${item.id}" target="_blank" class="li_top"
             ><img src="${item.showPicUrl}" alt=""
@@ -24,6 +27,7 @@ $(function () {
           </li>`;
       });
       $('.newlist .newul').on('mouseenter', 'li', function () {
+        // 这是鼠标滑入滑出切换图片
         var _$this = $(this);
         $.each(data, function (index, item) {
           if (Number(_$this.attr('code')) === item.id) {
@@ -63,6 +67,7 @@ $(function () {
       var str = '';
       // console.log(data);
       $.each(data, function (index, item) {
+        // 下面a标签里跳转到放大镜那个页面的时候传入了商品id
         str += `              
             <div class="rec_tj">
             <a href="./details.html?code=${item.id}" target="_blank" class="rec_smallimg">
@@ -87,6 +92,7 @@ $(function () {
       var str = '';
       console.log(data);
       $.each(data, function (index, item) {
+        // 下面a标签里跳转到放大镜那个页面的时候传入了商品id
         str += `<li code="${item.id}">
         <a href="./details.html?code=${item.id}" target="_blank" class="change_top"
           ><img src="${item.showPicUrl}" alt=""
@@ -103,6 +109,7 @@ $(function () {
         // console.log($($(this).children()[0]).children());
         var _$this = $(this);
         $.each(data, function (index, item) {
+          // 这里遍历数据，通过li标签上的code属性匹配相应的数据然后渲染，下面滑出也是
           // console.log(_$this.attr('code'));
           if (Number(_$this.attr('code')) === item.id) {
             // console.log(item.showPicUrl);
@@ -215,6 +222,7 @@ $(function () {
     }
   });
   // 头部吸顶
+  // 我这个头部没有写任何数据传输
   $(document).scroll(function () {
     if ($(window).scrollTop() > 180) {
       console.log(111);

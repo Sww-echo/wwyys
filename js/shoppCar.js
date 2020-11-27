@@ -20,6 +20,7 @@ $(document).scroll(function () {
     });
   }
 });
+// 这里也是一样，拿到url里的code并存起来下面用
 var code = location.href.split('?')[1].split('=')[1];
 // 设置cookie
 function setCookie(options) {
@@ -53,6 +54,7 @@ function getCookie(key) {
   return null;
 }
 $.ajax({
+  // 拿到详情页的数据
   type: 'get',
   url: './json/xiangqing.json',
   dataType: 'json',
@@ -64,7 +66,7 @@ $.ajax({
     $.each(data.data, function (index, item) {
       // console.log(getCookie(item.id));
       if (getCookie(item.id)) {
-        // console.log(item.id);
+        // 判断是否存在cookie
         flag = false;
         str += `<li class="clear">
           <section class="inp_img">
@@ -87,20 +89,7 @@ $.ajax({
     }
     $('.main .shoppList').html(str);
     // console.log($('.shoppList .add_rem input'));
-    // $('.shoppList .add_rem input').val('2');
-    /* $.each($('.shoppList .add_rem input'), function (ind, ite) {
-      // console.log(ite);
-      $(ite).val(getCookie($(this).attr('code')));
-    });
-    $.each($('.shoppList .allpric'), function (ind, ite) {
-      $.each($('.shoppList .djpric'), function (i, it) {
-        var price = $(it).text().substr(1);
-
-        console.log(price);
-        console.log(getCookie($(ite).attr('code')));
-        $(ite).text('￥' + getCookie($(this).attr('code')) * price);
-      });
-    }); */
+    // $('.shoppList .add_rem input').val('2')
     $.each($('.shoppList .add_rem input'), function (ind, ite) {
       // console.log(ite);
       $(ite).val(getCookie($(this).attr('code')));

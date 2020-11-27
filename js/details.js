@@ -1,6 +1,7 @@
 $('.header').load('./header.html');
 $.getScript('./js/header.js');
 $('.footer').load('./footer.html');
+// 这里拿到首页点击传过来的url后面的code并存起来，下面要用
 var code = location.href.split('?')[1].split('=')[1];
 // console.log(code);
 // 设置cookie
@@ -46,27 +47,36 @@ $(document).scroll(function () {
       backgroundColor: '#fff',
       zIndex: 20
     });
+    $('.magnifying .shoppCar').css({
+      top: 500
+    });
     // console.log($(window).scrollTop());
   } else {
     $('.header').css({
       position: 'static'
+    });
+    $('.magnifying .shoppCar').css({
+      top: 680
     });
   }
 });
 // 放大镜
 $(function () {
   $.ajax({
+    // 拿到详情页的数据
     type: 'get',
     url: './json/xiangqing.json',
     dataType: 'json',
     async: false,
     success: function (data) {
       var str = '';
+      // 这个是用来判断有没有数据的
       var flag = true;
 
       var boximg = null;
       $.each(data.data, function (index, item) {
         console.log(item.id);
+        // 判断，通过code和拿到的数据匹配并渲染页面
         if (code === item.id) {
           str = `<div class="minBox">
                 <img src="${item.url}" alt="" />
@@ -153,16 +163,17 @@ $(function () {
       // 页面加载获取cookie
       $('.carnum .inp').val(getCookie(code));
       if (!getCookie(code)) {
-        $('.carnum .inp').val('1');
+        $('.carnum .inp').val(1);
       }
       // 点击数量减少
       $('.carnum .car_prev').on('click', function () {
-        var carnum = Number($('.carnum .inp').val(1));
+        var carnum = Number($('.carnum .inp').val());
         if (carnum <= 1) {
           carnum = 1;
         } else {
           carnum--;
         }
+        console.log(carnum);
         $('.carnum .inp').val(carnum);
       });
       // 点击数量增加
@@ -171,7 +182,7 @@ $(function () {
         carnum++;
         $('.carnum .inp').val(carnum);
       });
-      // 点击加入购物车
+      // 点击加入购物车存cookie
       $('.addcar .add_gwc').on('click', function () {
         var carnum = Number($('.carnum .inp').val());
         setCookie({
