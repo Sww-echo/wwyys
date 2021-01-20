@@ -1,0 +1,119 @@
+.container {
+  width: 1090px;
+  margin: 0 auto; }
+
+.main {
+  border-top: 1px solid transparent; }
+  .main .main_tt {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 12px 0;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    font-size: 14px;
+    color: #333; }
+    .main .main_tt .check {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin: 0 20px; }
+    .main .main_tt span {
+      display: inline-block;
+      box-sizing: border-box; }
+      .main .main_tt span:nth-child(3) {
+        margin-left: 54px;
+        width: 300px; }
+      .main .main_tt span:nth-child(4) {
+        text-align: center;
+        width: 180px; }
+      .main .main_tt span:nth-child(5) {
+        text-align: center;
+        width: 170px; }
+      .main .main_tt span:nth-child(6) {
+        text-align: right;
+        width: 150px;
+        padding-right: 30px;
+        margin-right: 10px; }
+      .main .main_tt span:nth-child(7) {
+        text-align: left;
+        width: 130px;
+        padding-left: 30px; }
+  .main .shoppList h2 {
+    font-size: 100px;
+    color: #cc9756; }
+  .main .shoppList li {
+    background: #fffbf0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd; }
+    .main .shoppList li .inp_img {
+      float: left; }
+      .main .shoppList li .inp_img input {
+        width: 18px;
+        height: 18px; }
+      .main .shoppList li .inp_img img {
+        vertical-align: middle;
+        width: 100px;
+        height: 100px;
+        margin: 0 20px; }
+    .main .shoppList li h3 {
+      float: left;
+      height: 100px;
+      font-size: 14px;
+      display: block;
+      padding-top: 20px;
+      width: 248px;
+      box-sizing: border-box; }
+      .main .shoppList li h3:hover {
+        color: #cc9756; }
+    .main .shoppList li .djpric {
+      display: block;
+      float: left;
+      margin-left: 82px;
+      width: 42px;
+      height: 100px;
+      padding-top: 20px;
+      box-sizing: border-box; }
+    .main .shoppList li .add_rem {
+      display: block;
+      float: left;
+      border: 1px solid #ddd;
+      color: #333;
+      margin-left: 108px;
+      margin-top: 16px;
+      color: #999; }
+      .main .shoppList li .add_rem input {
+        width: 58px;
+        height: 24px;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center; }
+      .main .shoppList li .add_rem button:nth-child(1) {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        line-height: 22px;
+        border-right: 1px solid #ddd; }
+      .main .shoppList li .add_rem button:nth-child(3) {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        line-height: 22px;
+        border-left: 1px solid #ddd; }
+    .main .shoppList li .allpric {
+      color: #d4282d;
+      font-size: 14px;
+      display: block;
+      float: left;
+      margin-left: 110px;
+      padding-top: 20px; }
+    .main .shoppList li .remo {
+      font-size: 18px;
+      color: #999;
+      display: block;
+      float: left;
+      margin-left: 66px;
+      padding-top: 12px; }
+      .main .shoppList li .remo:hover {
+        color: #cc9756; }
