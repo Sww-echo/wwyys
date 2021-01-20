@@ -72,7 +72,6 @@ $(function () {
       var str = '';
       // 这个是用来判断有没有数据的
       var flag = true;
-
       var boximg = null;
       $.each(data.data, function (index, item) {
         console.log(item.id);

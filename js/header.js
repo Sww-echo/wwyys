@@ -28,8 +28,7 @@
         // console.log(item.id);
         var showList = '';
         $.each(item.subCateGroupList, function (inde, ite) {
-          showList += `<li code="${ite.id}">
-            <h3>${ite.name}</h3>`;
+          showList += `<li code="${ite.id}"><h3>${ite.name}</h3>`;
           // console.log(ite);
           var showListImg = '';
           showArr.push(ite.categoryList);
