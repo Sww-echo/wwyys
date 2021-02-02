@@ -5,13 +5,13 @@
 // console.log( process.argv )// [...]
 // console.log( process.argv[2] )// dev  build ...
 
-let mode = process.argv[2]
+let mode = process.argv[2];
 
-switch(mode){
-  case 'dev':
-    require('./gulpfile-dev.js')
-    break
-  case 'build':
-    require('./gulpfile-build.js')
-    break
+switch (mode) {
+  case "dev":
+    require("./gulpfile-dev.js");
+    break;
+  case "build":
+    require("./gulpfile-build.js");
+    break;
 }
